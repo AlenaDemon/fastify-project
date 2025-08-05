@@ -1,4 +1,4 @@
-# JS Fastify Example
+# [JS Fastify Example](https://fastify-project-sdkb.onrender.com)
 
 ## Requirement
 
