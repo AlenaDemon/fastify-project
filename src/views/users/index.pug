@@ -1,0 +1,27 @@
+extends ../layouts/index.pug
+
+block header
+  = "Список пользователей"
+
+block content
+  a.btn.btn-primary.mb-5(href=route('newUser')) Новый пользователь
+
+  div.table-responsive
+    table.table.table-borderless.table-striped.mt-5.bg-white
+      thead
+        tr
+          th Идентификатор
+          th Имя
+          th Емейл
+          th Действия
+      tbody
+        each user in users
+          tr
+            td= user.id
+            td= user.name
+            td= user.email
+            td
+              .d-flex.flex-wrap
+                a.btn.btn-primary.me-1(href=route('editUser', { id: user.id })) Редактировать
+                form(action=`${route('user', { id: user.id })}?_method=DELETE`, method="post")
+                  input(type='submit', value="Удалить", class="btn btn-danger")

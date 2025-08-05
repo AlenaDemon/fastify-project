@@ -1,0 +1,26 @@
+extends ../layouts/index.pug
+
+block content
+  .row.justify-content-center
+    .col-12.col-md-8
+      .card.shadow-sm
+        .card-body.row.p-5
+          .col-12.col-md-6.mt-3.mt-mb-0
+            form(action=route('users') method='post')
+              .form-floating.mb-3
+                input.form-control(id= "name" name= "name")
+                label(for= "name") Имя
+
+              .form-floating.mb-3
+                input.form-control(id= "email" name= "email")
+                label(for= "title") Емейл
+
+              .form-floating.mb-3
+                input.form-control(id= "password" name= "password")
+                label(for= "password") Пароль
+
+              .form-floating.mb-3
+                input.form-control(id= "passwordConfirmation" name= "passwordConfirmation")
+                label(for= "passwordConfirmation") Подтверждение пароля
+
+              input(class='btn btn-primary' type='submit' value= 'Создать')
